@@ -1,0 +1,75 @@
+<?php include 'db.php'; ?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Producto</title>
+    <style>
+        body {
+            background-color: #111;
+            color: white;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        h2 {
+            margin-top: 20px;
+            font-size: 1.8em;
+        }
+        .form-container {
+            width: 100%;
+            max-width: 400px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #222;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        input, button {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #444;
+        }
+        input {
+            background-color: #333;
+            color: white;
+        }
+        button {
+            background-color: yellow;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            color: black;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #e6e600;
+        }
+    </style>
+</head>
+<body>
+    <h2>Agregar Producto</h2>
+    <div class="form-container">
+        <form action="crud.php" method="POST">
+            <input type="text" name="producto" placeholder="Producto" required>
+            <input type="text" name="ubicacion" placeholder="Ubicación" required>
+            <input type="text" name="categoria" placeholder="Categoría" required>
+            <input type="text" name="descripcion" placeholder="Descripción" required>
+            <input type="text" name="marca" placeholder="Marca" required>
+            <input type="text" name="modelo" placeholder="Modelo" required>
+            <input type="text" name="codigo" placeholder="Código" required>
+            <input type="date" name="fecha_de_compra" required>
+            <input type="text" name="garantia" placeholder="Garantía" required>
+            <input type="number" step="0.01" name="precio_de_compra" placeholder="Precio de Compra" required>
+            <input type="number" step="0.01" name="ganancia_neta" placeholder="Ganancia Neta" required>
+            <input type="number" step="0.01" name="porcentaje_ganancia" placeholder="Porcentaje Ganancia" required>
+            <input type="number" step="0.01" name="precio_de_venta" placeholder="Precio de Venta" required>
+            <button type="submit" name="agregar">Agregar</button>
+        </form>
+    </div>
+</body>
+</html>
