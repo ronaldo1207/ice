@@ -1,0 +1,32 @@
+[
+  {
+    "Codigo": 886490904713,
+    "Producto": "Audifonos Tipo C",
+    "Ubicacion": "Punto Móvil",
+    "Categoria": "Audifonos Cable",
+    "Descripcion": "Acabado Métalico, Cable acordonado, Micrófono HD, Efecto Subwoofer, Incluye Estuche",
+    "Marca": "MOVISUN",
+    "Modelo": "ENJOY P2-TC",
+    "Fecha_de_compra": "2025-03-01",
+    "Garantia": "Primer Uso",
+    "Precio_de_compra": 13000.00,
+    "Ganancia_Neta": 12000.00,
+    "Porcentaje_Ganancia": 92.31,
+    "Precio_De_Venta": 26000.00
+  },
+  {
+    "Codigo": 1224361997697,
+    "Producto": "Audifonos Jack 3.5mm",
+    "Ubicacion": "Punto Móvil",
+    "Categoria": "Audifonos Cable",
+    "Descripcion": "Acabado Métalico, Cable acordonado, Micrófono HD, Incluye Bolsa De Tela Y Pinza",
+    "Marca": "MOVISUN",
+    "Modelo": "ENJOY P1-3,5mm",
+    "Fecha_de_compra": "2025-03-01",
+    "Garantia": "Primer Uso",
+    "Precio_de_compra": 10000.00,
+    "Ganancia_Neta": 10000.00,
+    "Porcentaje_Ganancia": 100.00,
+    "Precio_De_Venta": 20000.00
+  }
+]
