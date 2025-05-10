@@ -29,6 +29,17 @@
             width: 100%;
             bottom: 0;
         }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
     </style>
 </head>
 <body>
@@ -41,11 +52,21 @@
         <h2>Contenido principal</h2>
         <p>Esta es una página de ejemplo para mostrar cómo crear una estructura básica en HTML.</p>
         <p>Puedes agregar más contenido aquí, como imágenes, enlaces, listas y mucho más.</p>
+
+        <!-- Botón para ejecutar JavaScript -->
+        <button onclick="mostrarAlerta()">Haz clic aquí</button>
     </main>
 
     <footer>
         <p>&copy; 2025 Mi Página Web</p>
     </footer>
+
+    <script>
+        // Función que se ejecuta al hacer clic en el botón
+        function mostrarAlerta() {
+            alert("¡El JavaScript está funcionando!");
+        }
+    </script>
 
 </body>
 </html>
