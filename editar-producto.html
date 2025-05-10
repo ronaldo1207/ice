@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Producto</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Editar Producto</h1>
+    </header>
+
+    <form id="form-editar">
+        <input type="hidden" id="codigo">
+        <input type="text" id="producto" placeholder="Producto" required>
+        <input type="text" id="ubicacion" placeholder="Ubicación" required>
+        <input type="text" id="categoria" placeholder="Categoría" required>
+        <input type="text" id="descripcion" placeholder="Descripción" required>
+        <input type="text" id="marca" placeholder="Marca" required>
+        <input type="text" id="modelo" placeholder="Modelo" required>
+        <input type="date" id="fecha_de_compra" required>
+        <input type="text" id="garantia" placeholder="Garantía" required>
+        <input type="number" id="precio_de_compra" placeholder="Precio de Compra" required>
+        <input type="number" id="ganancia_neta" placeholder="Ganancia Neta" required>
+        <input type="number" id="porcentaje_ganancia" placeholder="Porcentaje Ganancia" required>
+        <input type="number" id="precio_de_venta" placeholder="Precio de Venta" required>
+        <button type="submit">Guardar Cambios</button>
+    </form>
+
+    <script src="script.js"></script>
+    <script>
+        // Cargar el producto para editar
+        function cargarProductoParaEditar() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const codigo = parseInt(urlParams.get('codigo'));
+
+            let productos = JSON.parse(localStorage.getItem('productos')) || [];
+            const producto = productos.find(p => p.Codigo === codigo);
+
+            if (producto) {
+                document.getElementById('codigo').value = producto.Codigo;
+                document.getElementById('producto').value = producto.Producto;
+                document.getElementById('ubicacion').value = producto.Ubicacion;
+                document.getElementById('categoria').value = producto.Categoria;
+                document.getElementById('descripcion').value = producto.Descripcion;
+                document.getElementById('marca').value = producto.Marca;
+                document.getElementById('modelo').value = producto.Modelo;
+                document.getElementById('fecha_de_compra').value = producto.Fecha_de_compra;
+                document.getElementById('garantia').value = producto.Garantia;
+                document.getElementById('precio_de_compra').value = producto.Precio_de_compra;
+                document.getElementById('ganancia_neta').value = producto.Ganancia_Neta;
+                document.getElementById('porcentaje_ganancia').value = producto.Porcentaje_Ganancia;
+                document.getElementById('precio_de_venta').value = producto.Precio_De_Venta;
+            }
+        }
+
+        // Guardar cambios del producto
+        document.getElementById('form-editar').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            let productos = JSON.parse(localStorage.getItem('productos')) || [];
+            const codigo = parseInt(document.getElementById('codigo').value);
+            const productoIndex = productos.findIndex(p => p.Codigo === codigo);
+
+            if (productoIndex !== -1) {
+                productos[productoIndex] = {
+                    Codigo: codigo,
+                    Producto: document.getElementById('producto').value,
+                    Ubicacion: document.getElementById('ubicacion').value,
+                    Categoria: document.getElementById('categoria').value,
+                    Descripcion: document.getElementById('descripcion').value,
+                    Marca: document.getElementById('marca').value,
+                    Modelo: document.getElementById('modelo').value,
+                    Fecha_de_compra: document.getElementById('fecha_de_compra').value,
+                    Garantia: document.getElementById('garantia').value,
+                    Precio_de_compra: document.getElementById('precio_de_compra').value,
+                    Ganancia_Neta: document.getElementById('ganancia_neta').value,
+                    Porcentaje_Ganancia: document.getElementById('porcentaje_ganancia').value,
+                    Precio_De_Venta: document.getElementById('precio_de_venta').value
+                };
+                localStorage.setItem('productos', JSON.stringify(productos));
+                alert('Producto actualizado correctamente');
+                window.location.href = 'index.html';
+            }
+        });
+
+        // Cargar producto al cargar la página
+        document.addEventListener('DOMContentLoaded', cargarProductoParaEditar);
+    </script>
+</body>
+</html>
