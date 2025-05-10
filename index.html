@@ -86,7 +86,7 @@ $productos = obtenerProductos();
         </div>
     </div>
 
-    <a href="add_product.php"><button>Agregar Producto</button></a>
+    <a href="add_product.html"><button>Agregar Producto</button></a>
 
     <table>
         <thead>
@@ -125,10 +125,10 @@ $productos = obtenerProductos();
                         <td><?= number_format((float)($producto['Porcentaje_Ganancia'] ?? 0), 0, '.', '') ?>%</td>
                         <td><?= number_format((float)($producto['Precio_De_Venta'] ?? 0), 0, '.', '') ?></td>
                         <td>
-                            <a href='edit_product.php?id=<?= urlencode($producto['Codigo']) ?>'>
+                            <a href='edit_product.html?id=<?= urlencode($producto['Codigo']) ?>'>
                                 <button>Editar</button>
                             </a>
-                            <a href='crud.php?delete=<?= urlencode($producto['Codigo']) ?>' onclick='return confirm("\u00bfEliminar producto?");'>
+                            <a href='crud.html?delete=<?= urlencode($producto['Codigo']) ?>' onclick='return confirm("\u00bfEliminar producto?");'>
                                 <button>Eliminar</button>
                             </a>
                         </td>
